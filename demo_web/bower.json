@@ -1,0 +1,21 @@
+{
+  "name": "demo_web",
+  "homepage": "https://github.com/ADS2-20162/medicfastv2",
+  "authors": [
+    "Your Name <you@example.com>"
+  ],
+  "description": "demo",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8"
+  }
+}

@@ -1,0 +1,6 @@
+*.pyc
+ve_*
+*- copia*
+*node_modules
+*bower_components
+~*
