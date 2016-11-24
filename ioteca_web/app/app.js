@@ -45,11 +45,11 @@ app
     });
     // $mdThemingProvider.theme('default').primaryPalette('amazingPaletteName');
 
-    $mdThemingProvider.theme('default').primaryPalette('blue', {'default': '900'})
+    $mdThemingProvider.theme('default').primaryPalette('deep-purple', {'default': '900'})
 
 
     $mdThemingProvider.theme('docs-dark')
-        .primaryPalette('blue')
+        .primaryPalette('deep-purple')
         .dark();
 });
 
