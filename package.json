@@ -1,27 +1,19 @@
 {
-  "name": "medicfastv2",
-  "version": "1.0.0",
-  "description": "desc",
-  "main": "gulpfile.js",
-  "dependencies": {
-    "gulp": "^3.9.1",
-    "gulp-connect": "^5.0.0"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "runserver"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ADS2-20162/medicfastv2.git"
-  },
-  "keywords": [
-    "gulp"
-  ],
-  "author": "devhres",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ADS2-20162/medicfastv2/issues"
-  },
-  "homepage": "https://github.com/ADS2-20162/medicfastv2#readme"
+    "name": "pydev",
+    "version": "1.0.0",
+    "description": "desc",
+    "main": "gulpfile.js",
+    "dependencies": {
+        "gulp": "^3.9.0",
+        "gulp-connect": "^2.3.1"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "runserver"
+    },
+    "keywords": [
+        "gulp"
+    ],
+    "author": "devhres",
+    "license": "ISC"
 }
