@@ -1,40 +1,165 @@
 <div ng-cloak>
     <md-content class="md-padding" layout-xs="column" layout="row">
         <div flex-xs flex-gt-xs="100" layout="column">
-            <md-card ng-controllerx="CategoriaCtrl">
+            <md-card ng-controllerx="DashboardSaveCtrl">
                 <md-card-header>
                     <md-card-avatar>
                         <img class="md-user-avatar" src="media/img/list/60.jpeg" />
                     </md-card-avatar>
                     <md-card-header-text>
-                        <span class="md-headline">Headline for title</span>
+                        <span class="md-headline este">BUSCAR PACIENTES</span>
                         <span class="md-subhead">subhead</span>
                     </md-card-header-text>
+
                 </md-card-header>
                 <md-divider></md-divider>
-                <md-card-actions layout="row" layout-align="start center">
-                            <md-button class="md-icon-button" aria-label="Add" ui-srefx="">
-                                <md-tooltip md-autohide>Add</md-tooltip>
-                                <ng-md-icon icon="add" aria-label="Add"></ng-md-icon>
-                            </md-button>
+                
+     <!-- esto son los buscadoress -->
+                <md-card-actions layout="row" layout-align="start center" >
+                            
+                           
                             <md-card-icon-actions>
                                 
-                                <md-input-container class="md-block md-search">
-                                    <input placeholder="Buscar" ng-model="query" ng-keyup="buscar()">
-                                </md-input-container>
-                                <md-button class="md-icon-button" aria-label="Share">
-                                    <ng-md-icon icon="more_vert" aria-label="title"></ng-md-icon>
-                                </md-button>
+                               <!-- input desplegable --> 
+            <md-input-container class="md-block" flex-gt-sm>
+            <label>State</label>
+            <md-select ng-model="user.state">
+              <md-option ng-repeat="state in states" value="{{state.abbrev}}">
+                {{state.abbrev}}
+              </md-option>
+            </md-select>
+          </md-input-container>
+                                
+                                
       
 
 
                             </md-card-icon-actions>
+
+                            <md-card-icon-actions>
+                                
+                                <md-input-container class="md-block md-search">
+                                    <input placeholder="Buscar por codigo" ng-model="query" ng-keyup="buscar()">
+                                </md-input-container>
+                                 
+                               
+      
+
+
+                            </md-card-icon-actions>
+
                         </md-card-actions>
-                        <md-divider></md-divider>
-                <md-card-content>
-                My content
-                </md-card-content>
+                
+       <!-- esto son los buscadoress -->     
+                         <md-card-actions layout="row" layout-align="start center" >
+                            
+                           
+                            <md-card-icon-actions>
+                                
+                                <md-input-container class="md-block md-search style3">
+                                    <input placeholder="Buscar por DNI" ng-model="query" ng-keyup="buscar()">
+                                </md-input-container>
+                                 
+                                
+      
+
+
+                            </md-card-icon-actions>
+                            <md-card-icon-actions>
+                                
+                                <md-input-container class="md-block md-search">
+                                    <input placeholder="Buscar po apellidos" ng-model="query" ng-keyup="buscar()">
+                                </md-input-container>
+                                
+                               
+      
+
+
+                            </md-card-icon-actions>
+
+                        </md-card-actions>
+ <section layout="row" layout-sm="column" layout-align="center center" layout-wrap class="e">
+                        <md-button class="md-raised md-primary style1" ng-click="save()"><ng-md-icon icon="search" class="style4"style4 aria-label="title"></ng-md-icon> Buscar</md-button> </left>
+                          <md-button class="md-raised md-primary  style2" ng-click="save()"> <ng-md-icon icon="add" class="style4"style4 aria-label="title"></ng-md-icon> Agregar Paciente</md-button>
+                           </section>
+                         <table table-responsive>
+                        
+                        <md-progress-linear layout-fill md-mode="indeterminate" ng-hide="!isLoading"></md-progress-linear>
+                        <thead md-on-reorder="onReorder">
+                            <tr>
+                                <th>#</th>
+                                 <th class="col-hidden" data-order="codigo">codigo</th>
+                                 <th class="col-hidden" data-order="nombre">nombre</th>
+                                 <th class="col-hidden" data-order="nombre">apellidos</th>
+                                 <th class="col-hidden" data-order="nombre">categoria</th>
+                                 <th class="col-hidden" data-order="nombre">Direcion</th>
+                                 <th class="col-hidden" data-order="nombre">telefono</th>
+
+
+                                
+                                <th colspan="2" class="align-options">acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="d in lista">
+                                <td> {{ $index + 1 }} </td>
+                                <td> {{ d.nombre }} </td>
+                                <td> {{ d.codigo }} </td>
+                                <td> {{ d.estado }} </td>
+                                <td>
+                                    <md-button class="md-icon-button md-td" aria-label="Edit" ui-sref="catalogo.catalogo.categoriasEdit({id:d.id})">
+                                        <md-tooltip md-autohide>Edit {{ d.codename }}</md-tooltip>
+                                        <ng-md-icon  size="24" icon="edit" aria-label="Edit"></ng-md-icon>
+                                    </md-button>
+                                </td>
+                                <td>
+                                    <md-button class="md-icon-button md-td" aria-label="delete" ng-click="delete(d)">
+                                        <md-tooltip md-autohide>Delete {{ d.codename }}</md-tooltip>
+                                        <ng-md-icon  size="24" icon="delete" aria-label="delete"></ng-md-icon>
+                                    </md-button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                        <!-- ffff -->
+                        
+               
             </md-card>
         </div>
     </md-content>
 </div>
+<style>
+.este {
+    text-align: center;
+
+}
+.style1 {
+    
+    margin-right: 30%;
+
+    
+}
+.style2 {
+    margin-right: 20%;
+     
+    
+}
+.style3 {
+    margin-left: 20%;
+     
+    
+}
+.style4 {
+    background-color: skyblue;
+}
+
+
+
+
+
+
+
+
+</style>
