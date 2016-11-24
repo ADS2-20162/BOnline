@@ -7,7 +7,7 @@ app
 
     $scope.menu = menuService;
     $scope.app = {
-        name: 'IOTECA',
+        name: 'MedicfastV2',
         version: '1.0.1',
 
         setting: {

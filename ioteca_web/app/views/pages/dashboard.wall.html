@@ -4,14 +4,14 @@
             <md-card ng-controllerx="DashboardSaveCtrl">
                 <md-card-header>
                     <md-card-avatar>
-                        <img class="md-user-avatar" src="media/img/list/60.jpeg" />
+                        <img class="md-user-avatar style5" src="media/img/list/logo.png" />
                     </md-card-avatar>
                     <md-card-header-text>
                         <span class="md-headline este">BUSCAR PACIENTES</span>
-                        <span class="md-subhead">subhead</span>
+                       
                     </md-card-header-text>
 
-                </md-card-header>
+                </md-card-header> <br>
                 <md-divider></md-divider>
                 
      <!-- esto son los buscadoress -->
@@ -21,16 +21,11 @@
                             <md-card-icon-actions>
                                 
                                <!-- input desplegable --> 
-            <md-input-container class="md-block" flex-gt-sm>
-            <label>State</label>
-            <md-select ng-model="user.state">
-              <md-option ng-repeat="state in states" value="{{state.abbrev}}">
-                {{state.abbrev}}
-              </md-option>
-            </md-select>
-          </md-input-container>
+            
                                 
-                                
+                                 <md-input-container class="md-block md-search style3">
+                                    <input placeholder="Buscar " ng-model="query" ng-keyup="buscar()">
+                                </md-input-container>
       
 
 
@@ -151,11 +146,13 @@
      
     
 }
+
 .style4 {
     background-color: skyblue;
 }
 
-
+.style5 {
+    width:60px;
 
 
 

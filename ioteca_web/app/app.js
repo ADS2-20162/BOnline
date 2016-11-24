@@ -58,7 +58,7 @@ app
     .config(function($mdThemingProvider) {
 
         $mdThemingProvider.theme('altTheme')
-            .primaryPalette('purple'); // specify primary color, all
+            .primaryPalette('teal'); // specify primary color, all
         // other color intentions will be inherited
         // from default
 
