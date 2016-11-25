@@ -45,7 +45,7 @@ app
     .state("auths.system.cat", {
         url: "/cat",
         data: { section: 'System', page: 'Cat' },
-        templateUrl: "ioteca_web_apps/auths_web/views/cat/index.html"
+        templateUrl: "ioteca_web_apps/reporte_web/views/cat/index.html"
     })
 
     //==================================
@@ -56,7 +56,7 @@ app
      .state("auths.system.upeu", {
         url: "/upeu",
         data: { section: 'System', page: 'Upeu' },
-        templateUrl: "ioteca_web_apps/auths_web/views/upeu/index.html"
+        templateUrl: "ioteca_web_apps/reporte_web/views/upeu/index.html"
     })
       //==================================
     // url personal
@@ -65,12 +65,12 @@ app
     .state("auths.system.personal", {
         url: "/personal",
         data: { section: 'System', page: 'Personal' },
-        templateUrl: "ioteca_web_apps/auths_web/views/personal/index.html"
+        templateUrl: "ioteca_web_apps/reporte_web/views/personal/index.html"
     })
     .state("auths.system.contenttype", {
         url: "/contenttype",
         data: { section: 'System', page: 'Aplicaciones' },
-        templateUrl: "ioteca_web_apps/auths_web/views/contenttype/index.html"
+        templateUrl: "ioteca_web_apps/reporte_web/views/contenttype/index.html"
     })
     //==================================
     // url mision
@@ -79,7 +79,7 @@ app
     .state("auths.system.mision", {
         url: "/mision",
         data: { section: 'System', page: 'Misions' },
-        templateUrl: "ioteca_web_apps/auths_web/views/mision/index.html"
+        templateUrl: "ioteca_web_apps/reporte_web/views/mision/index.html"
     })
 
     //==================================
@@ -89,7 +89,7 @@ app
     .state("auths.system.visita", {
         url: "/visita",
         data: { section: 'System', page: 'VISITA' },
-        templateUrl: "ioteca_web_apps/auths_web/views/visita/index.html",
+        templateUrl: "ioteca_web_apps/reporte_web/views/visita/index.html",
 
         settings: {
             //loginRequired: true,

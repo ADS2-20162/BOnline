@@ -35,7 +35,7 @@ app
             //loginRequired: true,
             //roles: ['User'],
         },
-        templateUrl: "ioteca_web_apps/ui_web/views/tests/test1.html",
+        templateUrl: "ioteca_web_apps/mantenimiento_web/views/tests/trabajador.html",
         resolve: {
             //checkSecurity: checkSecurity,
         },
@@ -48,7 +48,7 @@ app
     .state("ui.test2", {
         url: "/test2",
         data: { page: 'Test 2' },
-        templateUrl: "ioteca_web_apps/ui_web/views/tests/test2.html",
+        templateUrl: "ioteca_web_apps/mantenimiento_web/views/tests/medicinas.html",
         resolve: {
             //checkSecurity: checkSecurity,
         },
@@ -58,39 +58,9 @@ app
         },
     })
 
-    //==================================
-    // test3
-    //==================================
-    .state("ui.test3", {
-        url: "/test3",
-        data: { page: 'Test 3' },
-        templateUrl: "ioteca_web_apps/ui_web/views/tests/test3.html"
-    })
-
-    //==================================
-    // test4
-    //==================================
-    .state("ui.test4", {
-        url: "/test4",
-        data: { section: 'UI', page: 'Test 4' },
-        templateUrl: "ioteca_web_apps/ui_web/views/tests/test4.html"
-    })
-    //==================================
-    // test5pagination
-    //==================================
-    .state("ui.test5", {
-        url: "/test5",
-        data: { section: 'UI', page: 'Test 5' },
-        templateUrl: "ioteca_web_apps/ui_web/views/tests/test5pagination.html"
-    })
-    //==================================
-    // test6directivas
-    //==================================
-    .state("ui.dir", {
-        url: "/dir",
-        data: { section: 'UI', page: 'Test 6 directivas' },
-        templateUrl: "ioteca_web_apps/ui_web/views/tests/test6dir.html"
-    })
+    
+    
+    
 
 
     ;
