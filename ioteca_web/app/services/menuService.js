@@ -18,28 +18,10 @@ app
         */
     ];
 
-
     sections.push({
-        title: 'CENTRO MEDICO',
+        title: 'INICIO',
         state: 'app.dashboard',
         type: 'link'
-    });
-   sections.push({
-
-        menu: [{
-            title: 'INICIO',
-            type: 'toggle',
-            state: 'catalogo.catalogo',
-            menu_items: [{
-                title: 'Categorías',
-                state: 'catalogo.catalogo.categorias',
-                type: 'link'
-            }, {
-                title: 'Autores',
-                state: 'catalogo.catalogo.autores',
-                type: 'link'
-            }, ]
-        }]
     });
 
     sections.push({
@@ -92,7 +74,23 @@ app
     });
 
 
-    
+    sections.push({
+
+        menu: [{
+            title: 'Catálogo',
+            type: 'toggle',
+            state: 'catalogo.catalogo',
+            menu_items: [{
+                title: 'Categorías',
+                state: 'catalogo.catalogo.categorias',
+                type: 'link'
+            }, {
+                title: 'Autores',
+                state: 'catalogo.catalogo.autores',
+                type: 'link'
+            }, ]
+        }]
+    });
 
     authService.getMenu().then(function(r) {
         menu = r.data;

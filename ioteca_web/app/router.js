@@ -95,7 +95,7 @@ app
         //==================================
         .state("app.dashboard", {
             url: "/dashboard",
-            data: { page: 'CENTRO MEDICO' },
+            data: { page: 'Dashboard page' },
             views: {
                 '': {
                     templateUrl: "app/views/pages/dashboard.wall.html"
