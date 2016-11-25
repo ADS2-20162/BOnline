@@ -23,17 +23,21 @@ app
         state: 'app.dashboard',
         type: 'link'
     });
-     sections.push({
+    sections.push({
 
         menu: [{
-            title: 'INICIO',
+            title: 'Catálogo',
             type: 'toggle',
             state: 'catalogo.catalogo',
             menu_items: [{
-                title: 'Pacientes',
+                title: 'Categorías',
                 state: 'catalogo.catalogo.categorias',
                 type: 'link'
-            },  ]
+            }, {
+                title: 'Autores',
+                state: 'catalogo.catalogo.autores',
+                type: 'link'
+            }, ]
         }]
     });
 

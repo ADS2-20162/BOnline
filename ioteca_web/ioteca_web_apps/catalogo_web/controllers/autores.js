@@ -1,27 +1,19 @@
 app
 // =========================================================================
-// Show View and Delete Categoria 
+// Show View and Delete Autor 
 // =========================================================================
-    .controller("CategoriaCtrl", function($scope, $state, $stateParams, catalogoService, $window, $mdDialog, $log, toastr) {
+    .controller("AutorCtrl", function($scope, $state, $stateParams, catalogoService, $window, $mdDialog, $log, toastr, $filter) {
     //Valores iniciales
-    $scope.fields = 'name,codename';
+    $scope.fields = 'nombre';
     var params = {};
     $scope.lista = [];
-    $scope.categoria = {};
-
-    
-    //$window.location = "#" + $location.path();
-     $scope.states = ('AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS ' +
-    'MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI ' +
-    'WY').split(' ').map(function(state) {
-        return {abbrev: state};
-      });
+    $scope.autor = {};
 
     $scope.list = function(params) {
         $scope.isLoading = true;
-        catalogoService.Categoria.query(params, function(r) {
-            $scope.lista = r;
-            //$scope.options = r.options;
+        catalogoService.Autor.query(params, function(r) {
+            $scope.lista = r.results;
+            $scope.options = r.options;
             $scope.isLoading = false;
         }, function(err) {
             $log.log("Error in list:" + JSON.stringify(err));
@@ -36,7 +28,11 @@ app
         params.query = $scope.query;
         $scope.list(params);
     };
-
+      $scope.states = ('AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS ' +
+    'MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI ' +
+    'WY').split(' ').map(function(state) {
+        return {abbrev: state};
+      });
 
     $scope.onReorder = function(order) { //TODO
         $log.log('Order: ' + order);
@@ -44,9 +40,9 @@ app
 
     $scope.delete = function(d) {
         if ($window.confirm("Seguro?")) {
-            catalogoService.Categoria.delete({ id: d.id }, function(r) {
-                $log.log("Se eliminó la categoría:" + JSON.stringify(d));
-                toastr.success('Se eliminó la categoría ' + d.nombre, 'Categoría');
+            catalogoService.Autor.delete({ id: d.id }, function(r) {
+                $log.log("Se eliminó autor:" + JSON.stringify(d));
+                toastr.success('Se eliminó autor ' + d.nombre, 'Autor');
                 $scope.list(params);
             }, function(err) {
                 $log.log("Error in delete:" + JSON.stringify(err));
@@ -58,15 +54,15 @@ app
 })
 
 // =========================================================================
-// Create and Update Categoria
+// Create and Update Autor
 // =========================================================================
-.controller("CategoriaSaveCtrl", function($scope, $state, $stateParams, catalogoService, $window, $mdDialog, $log, toastr) {
+.controller("AutorSaveCtrl", function($scope, $state, $stateParams, catalogoService, $window, $mdDialog, $log, toastr, $filter) {
     //Valores iniciales
-    $scope.categoria = {};
-
+    $scope.autor = {};
     $scope.sel = function() {
-        catalogoService.Categoria.get({ id: $stateParams.id }, function(r) {
-            $scope.categoria = r;
+        catalogoService.Autor.get({ id: $stateParams.id }, function(r) {
+            $scope.autor = r;
+            if (r.fecha_nac) $scope.autor.fecha_nacT = new Date($filter('date')(r.fecha_nac));
         }, function(err) {
             $log.log("Error in get:" + JSON.stringify(err));
             toastr.error(err.data.detail, err.status + ' ' + err.statusText);
@@ -77,28 +73,35 @@ app
     }
 
     $scope.save = function() {
-        if ($scope.categoria.id) {
-            catalogoService.Categoria.update({ id: $scope.categoria.id }, $scope.categoria, function(r) {
+        if ($scope.autor.fecha_nacT) {
+            $scope.autor.fecha_nac = $filter('date')(new Date($scope.autor.fecha_nacT), 'yyyy-MM-dd');
+        }
+        if ($scope.autor.id) {
+            catalogoService.Autor.update({ id: $scope.autor.id }, $scope.autor, function(r) {
                 $log.log("r: " + JSON.stringify(r));
-                toastr.success('Se editó la categoría ' + r.nombre, 'Categoría');
-                $state.go('catalogo.catalogo.categorias');
+                toastr.success('Se editó autor ' + r.nombre, 'Autor');
+                $state.go('catalogo.catalogo.autores');
             }, function(err) {
                 $log.log("Error in update:" + JSON.stringify(err));
                 toastr.error(err.data.detail, err.status + ' ' + err.statusText);
             });
         } else {
-            catalogoService.Categoria.save($scope.categoria, function(r) {
+            catalogoService.Autor.save($scope.autor, function(r) {
                 $log.log("r: " + JSON.stringify(r));
-                toastr.success('Se insertó la categoría ' + r.nombre, 'Categoría');
-                $state.go('catalogo.catalogo.categorias');
+                toastr.success('Se insertó autor ' + r.nombre, 'Autor');
+                $state.go('catalogo.catalogo.autores');
             }, function(err) {
                 $log.log("Error in save:" + JSON.stringify(err));
                 toastr.error(err.data.detail, err.status + ' ' + err.statusText);
             });
         }
+
     };
 
     $scope.cancel = function() {
-        $state.go('catalogo.catalogo.categorias');
+        $state.go('catalogo.catalogo.autores');
+
+
+
     };
 });

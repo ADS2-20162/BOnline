@@ -17,6 +17,14 @@
                         <md-tooltip md-autohide>Add</md-tooltip>
                         <ng-md-icon icon="add" aria-label="Add"></ng-md-icon>
                     </md-button>
+                    <md-input-container class="md-block" flex-gt-sm>
+            <label>State</label>
+            <md-select ng-model="user.state">
+              <md-option ng-repeat="state in states" value="{{state.abbrev}}">
+                {{state.abbrev}}
+              </md-option>
+            </md-select>
+          </md-input-container>
                     <md-card-icon-actions>
                         <md-input-container class="md-block md-search">
                             <input placeholder="Buscar" ng-model="query" ng-keyup="buscar()">
