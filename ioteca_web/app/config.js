@@ -77,27 +77,7 @@ app
 
 
 
-app.constant('ROUTERS_T', [{
-    "estado.nombre.1": {
-        "url": "/url",
-        "data": {
-            "section": "Menu name",
-            "page": "Menu item name"
-        },
-        "templateUrl": "appname_web_apps/appname_web/views/model/index.html"
-    }
 
-}, {
-    "estado.nombre.2": {
-        "url": "/url2",
-        "data": {
-            "section": "Menu name2",
-            "page": "Menu item name2"
-        },
-        "templateUrl": "appname_web_apps/appname_web/views/model2/index.html"
-    }
-
-}]);
 
 
 app.constant('ROUTERS', [{

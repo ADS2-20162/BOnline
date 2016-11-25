@@ -30,12 +30,12 @@ app
     //==================================
     .state("ui.test1", {
         url: "/test1",
-        data: { section: 'UI', page: 'Test 1 uno más' },
+        data: { section: 'UI', page: 'Trabajador' },
         settings: {
             //loginRequired: true,
             //roles: ['User'],
         },
-        templateUrl: "ioteca_web_apps/mantenimiento_web/views/tests/trabajador.html",
+        templateUrl: "ioteca_web_apps/mantenimiento_web/views/trabajador/trabajador.html",
         resolve: {
             //checkSecurity: checkSecurity,
         },
@@ -47,8 +47,8 @@ app
     //==================================
     .state("ui.test2", {
         url: "/test2",
-        data: { page: 'Test 2' },
-        templateUrl: "ioteca_web_apps/mantenimiento_web/views/tests/medicinas.html",
+        data: { page: 'Medicamentos' },
+        templateUrl: "ioteca_web_apps/mantenimiento_web/views/medicinas/medicinas.html",
         resolve: {
             //checkSecurity: checkSecurity,
         },
