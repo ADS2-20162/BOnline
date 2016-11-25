@@ -30,6 +30,10 @@ app
             type: 'toggle',
             state: 'catalogo.catalogo',
             menu_items: [{
+                title: 'INICIO',
+                state: 'catalogo.catalogo.inicio',
+                type: 'link'
+            },{
                 title: 'Categorías',
                 state: 'catalogo.catalogo.categorias',
                 type: 'link'

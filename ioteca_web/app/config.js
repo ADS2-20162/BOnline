@@ -129,7 +129,32 @@ app.constant('ROUTERS', [{
         "url": "/catalogo",
         "template": "<div ui-view ></div>"
     }
-}, {
+},/*INICIO*/{
+    "catalogo.catalogo.inicio": {
+        "url": "/inicio",
+        "data": {
+            "section": "Catálogo",
+            "page": "Inicio"
+        },
+        "templateUrl": "ioteca_web_apps/catalogo_web/views/inicio/index.html"
+    },
+    "catalogo.catalogo.inicioNew": {
+        "url": "/inicio/new",
+        "data": {
+            "section": "Catálogo",
+            "page": "Categorías"
+        },
+        "templateUrl": "ioteca_web_apps/catalogo_web/views/inicio/form.html"
+    },
+    "catalogo.catalogo.inicioEdit": {
+        "url": "/inicio/:id/edit",
+        "data": {
+            "section": "Catálogo",
+            "page": "Categorías"
+        },
+        "templateUrl": "ioteca_web_apps/catalogo_web/views/inicio/form.html"
+    }
+}, /*CATEGORIAS*/{
     "catalogo.catalogo.categorias": {
         "url": "/categorias",
         "data": {
@@ -154,7 +179,7 @@ app.constant('ROUTERS', [{
         },
         "templateUrl": "ioteca_web_apps/catalogo_web/views/categorias/form.html"
     }
-}, {
+},/*AUTORES*/ {
     "catalogo.catalogo.autores": {
         "url": "/autores",
         "data": {
