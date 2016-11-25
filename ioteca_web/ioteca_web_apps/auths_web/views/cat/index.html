@@ -1,33 +1,40 @@
 <div ng-cloak>
     <md-content class="md-padding" layout-xs="column" layout="row">
         <div flex-xs flex-gt-xs="100" layout="column">
-            <md-card ng-controllerx="CategoriaCtrl">
+            <md-card ng-controllerx="DashboardSaveCtrl">
                 <md-card-header>
-                   
+                    <md-card-avatar>
+                        <img class="md-user-avatar style5" src="media/img/list/logo.png" />
+                    </md-card-avatar>
                     <md-card-header-text>
-                        <span class="md-headline este">Trabajador</span>
-                    
+                        <span class="md-headline este">BUSCAR PACIENTESddfdfdsffd</span>
+                       
                     </md-card-header-text>
 
-                </md-card-header>
+                </md-card-header> <br>
                 <md-divider></md-divider>
                 
      <!-- esto son los buscadoress -->
-                
+                <md-card-actions layout="row" layout-align="start center" >
                             
                            
-                           
-
-                        
-
-                       
-
-       <!-- esto son los buscadoress -->     
-                         <md-card-actions layout="row" layout-align="start center" >
-                             <md-card-icon-actions>
+                            <md-card-icon-actions>
                                 
-                                <md-input-container class="md-block md-search style5">
-                                    <input placeholder="Buscar por DNI" ng-model="query" ng-keyup="buscar()">
+                               <!-- input desplegable --> 
+            
+                                
+                                 <md-input-container class="md-block md-search style3">
+                                    <input placeholder="Buscar " ng-model="query" ng-keyup="buscar()">
+                                </md-input-container>
+      
+
+
+                            </md-card-icon-actions>
+
+                            <md-card-icon-actions>
+                                
+                                <md-input-container class="md-block md-search">
+                                    <input placeholder="Buscar por codigo" ng-model="query" ng-keyup="buscar()">
                                 </md-input-container>
                                  
                                
@@ -35,12 +42,17 @@
 
 
                             </md-card-icon-actions>
+
+                        </md-card-actions>
+                
+       <!-- esto son los buscadoress -->     
+                         <md-card-actions layout="row" layout-align="start center" >
                             
                            
                             <md-card-icon-actions>
                                 
                                 <md-input-container class="md-block md-search style3">
-                                    <input placeholder="Buscar por Nombre" ng-model="query" ng-keyup="buscar()">
+                                    <input placeholder="Buscar por DNI" ng-model="query" ng-keyup="buscar()">
                                 </md-input-container>
                                  
                                 
@@ -51,7 +63,7 @@
                             <md-card-icon-actions>
                                 
                                 <md-input-container class="md-block md-search">
-                                    <input placeholder="Buscar por Apellidos" ng-model="query" ng-keyup="buscar()">
+                                    <input placeholder="Buscar po apellidos" ng-model="query" ng-keyup="buscar()">
                                 </md-input-container>
                                 
                                
@@ -60,28 +72,24 @@
 
                             </md-card-icon-actions>
 
-                        </md-card-actions><br> 
-                        
- <section layout="row" layout-sm="column" layout-align="center center" layout-wrap >
-                        <md-button class="md-raised md-primary style1 " ng-click="save()"><ng-md-icon icon="search" class="style4 " aria-label="title"></ng-md-icon> Buscar</md-button> </left> 
+                        </md-card-actions><br>
 
-                          <md-button class="md-raised md-primary  style2 " ng-click="save()"> <ng-md-icon icon="add" class="style4" aria-label="title"></ng-md-icon> Agregar Paciente</md-button>
+ <section layout="row" layout-sm="column" layout-align="center center" layout-wrap class="e">
+                        <md-button class="md-raised md-primary style1" ng-click="save()"><ng-md-icon icon="search" class="style4"style4 aria-label="title"></ng-md-icon> Buscar</md-button> </left>
+                          <md-button class="md-raised md-primary  style2" ng-click="save()"> <ng-md-icon icon="add" class="style4"style4 aria-label="title"></ng-md-icon> Agregar Paciente</md-button>
                            </section><br>
-                           <md-divider></md-divider>
-                           
-
                          <table table-responsive>
-                        
-                        <md-progress-linear layout-fill md-mode="indeterminate" ng-hide="!isLoading"></md-progress-linear>
+                        <md-divider></md-divider>
+                     
                         <thead md-on-reorder="onReorder">
                             <tr>
                                 <th>#</th>
-                                 <th class="col-hidden" data-order="nombre_apellido">nombre y apellidos</th>
-                                 <th class="col-hidden" data-order="cargo">cargo</th>
-                                 <th class="col-hidden" data-order="dni">DNI</th>
-                                 <th class="col-hidden" data-order="dr_atiende">Dr.Atiende</th>
-                                 <th class="col-hidden" data-order="especialdidad">Especialdidad</th>
-                                 
+                                 <th class="col-hidden" data-order="codigo">codigo</th>
+                                 <th class="col-hidden" data-order="nombre">nombre</th>
+                                 <th class="col-hidden" data-order="nombre">apellidos</th>
+                                 <th class="col-hidden" data-order="nombre">categoria</th>
+                                 <th class="col-hidden" data-order="nombre">Direcion</th>
+                                 <th class="col-hidden" data-order="nombre">telefono</th>
 
 
                                 
@@ -121,27 +129,31 @@
 <style>
 .este {
     text-align: center;
+
+}
+.style1 {
+    
+    margin-right: 30%;
+
+    
 }
 .style2 {
-    margin-left: 20%;
+    margin-right: 20%;
      
     
 }
 .style3 {
-    margin-left: 10%;
+    margin-left: 20%;
      
     
 }
+
 .style4 {
     background-color: skyblue;
-
 }
+
 .style5 {
-    margin-left: 20%;
-}
-
-
-
+    width:60px;
 
 
 

@@ -38,54 +38,58 @@ app
     })
 
 
+
     //==================================
-    // url ct
+    // url cat
     //==================================
-    .state("auths.system.ct", {
-        url: "/ct",
-        data: { section: 'System', page: 'Document' },
-        templateUrl: "app/views/pages/document.html"
+    .state("auths.system.cat", {
+        url: "/cat",
+        data: { section: 'System', page: 'Cat' },
+        templateUrl: "ioteca_web_apps/auths_web/views/cat/index.html"
     })
 
     //==================================
-    // url hierarchy
+    // url  upeu
     //==================================
-    .state('auths.hierarchy', {
-        url: '/hierarchy',
-        template: '<div ui-view ></div>'
-    })
+  
 
-     .state("auths.hierarchy.hierarchy_type", {
-        url: "/hierarchy_type",
-        data: { section: 'Hierarchys', page: 'Hierarchy Type' },
-        templateUrl: "ioteca_web_apps/auths_web/views/hierarchy_type/index.html"
+     .state("auths.system.upeu", {
+        url: "/upeu",
+        data: { section: 'System', page: 'Upeu' },
+        templateUrl: "ioteca_web_apps/auths_web/views/upeu/index.html"
     })
+      //==================================
+    // url personal
+    //==
 
-    .state("auths.system.permission", {
-        url: "/permission",
-        data: { section: 'System', page: 'Permisos' },
-        templateUrl: "ioteca_web_apps/auths_web/views/permission/index.html"
+    .state("auths.system.personal", {
+        url: "/personal",
+        data: { section: 'System', page: 'Personal' },
+        templateUrl: "ioteca_web_apps/auths_web/views/personal/index.html"
     })
     .state("auths.system.contenttype", {
         url: "/contenttype",
         data: { section: 'System', page: 'Aplicaciones' },
         templateUrl: "ioteca_web_apps/auths_web/views/contenttype/index.html"
     })
+    //==================================
+    // url mision
+    //====
 
-    .state("auths.system.log", {
-        url: "/log",
-        data: { section: 'System', page: 'Logs' },
-        templateUrl: "ioteca_web_apps/auths_web/views/log/index.html"
+    .state("auths.system.mision", {
+        url: "/mision",
+        data: { section: 'System', page: 'Misions' },
+        templateUrl: "ioteca_web_apps/auths_web/views/mision/index.html"
     })
 
     //==================================
-    // url Menú
+    // url  visitas
     //==================================
 
-    .state("auths.system.menu", {
-        url: "/menu",
-        data: { section: 'System', page: 'Menú' },
-        templateUrl: "ioteca_web_apps/auths_web/views/menu/index.html",
+    .state("auths.system.visita", {
+        url: "/visita",
+        data: { section: 'System', page: 'VISITA' },
+        templateUrl: "ioteca_web_apps/auths_web/views/visita/index.html",
 
         settings: {
             //loginRequired: true,

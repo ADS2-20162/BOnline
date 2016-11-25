@@ -1,71 +1,104 @@
-<md-content class="md-padding" >
-        <md-card>
-            <div class="subheaderdemoBasicUsage content-reset " ng-controller="SubheaderAppCtrl" layout="column" flex="" layout-fill="">
-                <md-toolbar md-scroll-shrink="">
-                    <div class="md-toolbar-tools">My Messages</div>
-                </md-toolbar>
-                <md-content style="height: 600px;" md-theme="altTheme">
-                    <section>
-                        <md-subheader class="md-primary">Unread Messages</md-subheader>
-                        <md-list layout-padding="">
-                            <md-list-item class="md-3-line" ng-repeat="message in messages">
-                                <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
-                                <div class="md-list-item-text">
-                                    <h3>{{message.what}}</h3>
-                                    <h4>{{message.who}}</h4>
-                                    <p>
-                                        {{message.notes}}
-                                    </p>
-                                </div>
-                            </md-list-item>
-                        </md-list>
-                    </section>
-                    <section>
-                        <md-subheader class="md-warn">Late Messages</md-subheader>
-                        <md-list layout="column" layout-padding="">
-                            <md-list-item class="md-3-line" ng-repeat="message in messages">
-                                <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
-                                <div class="md-list-item-text">
-                                    <h3>{{message.what}}</h3>
-                                    <h4>{{message.who}}</h4>
-                                    <p>
-                                        {{message.notes}}
-                                    </p>
-                                </div>
-                            </md-list-item>
-                        </md-list>
-                    </section>
-                    <section>
-                        <md-subheader>Read Messages</md-subheader>
-                        <md-list layout="column" layout-padding="">
-                            <md-list-item class="md-3-line" ng-repeat="message in messages">
-                                <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
-                                <div class="md-list-item-text">
-                                    <h3>{{message.what}}</h3>
-                                    <h4>{{message.who}}</h4>
-                                    <p>
-                                        {{message.notes}}
-                                    </p>
-                                </div>
-                            </md-list-item>
-                        </md-list>
-                    </section>
-                    <section>
-                        <md-subheader class="md-accent">Archived messages</md-subheader>
-                        <md-list layout="column" layout-padding="">
-                            <md-list-item class="md-3-line" ng-repeat="message in messages">
-                                <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
-                                <div class="md-list-item-text">
-                                    <h3>{{message.what}}</h3>
-                                    <h4>{{message.who}}</h4>
-                                    <p>
-                                        {{message.notes}}
-                                    </p>
-                                </div>
-                            </md-list-item>
-                        </md-list>
-                    </section>
-                </md-content>
-            </div>
-        </md-card>
-</md-content>
+<div ng-cloak>
+    <md-content class="md-padding" layout-xs="column" layout="row">
+        <div flex-xs flex-gt-xs="100" layout="column">
+            <md-card ng-controllerx="CategoriaCtrl">
+                <md-card-header>
+                   
+                    <md-card-header-text>
+                        <span class="md-headline este">Medicamentos</span>
+                    
+                    </md-card-header-text>
+
+                </md-card-header>
+                <md-divider></md-divider>
+                
+     <!-- esto son los buscadoress -->
+                
+                            
+                           
+                           
+
+                        
+
+                       
+
+       <!-- esto son los buscadoress -->     
+                         <md-card-actions layout="row" layout-align="start center" >
+                             <md-card-icon-actions>
+                                
+                                <md-input-container class="md-block md-search style5">
+                                    <input placeholder="Nombre" ng-model="query" ng-keyup="buscar()">
+                                </md-input-container>
+
+                                 <md-input-container class="md-block md-search style5">
+                                    <input placeholder="Categoria" ng-model="query" ng-keyup="buscar()">
+                                </md-input-container>
+                                
+                            </md-card-icon-actions>
+
+                        </md-card-actions><br> 
+                                 
+
+                                 
+<!-- A QUIE ESTAN  LOS botones-->
+                        
+ <section layout="row" layout-sm="column" layout-align="center center" layout-wrap >
+                        <md-button class="md-raised md-primary  style2 " ng-click="save()"> <ng-md-icon icon="apple" class="style4" aria-label="title"></ng-md-icon>Pastilla</md-button>
+
+                        <md-button class="md-raised md-primary style2 " ng-click="save()"><ng-md-icon icon="search" class="style4 " aria-label="title"></ng-md-icon> Buscar</md-button> </left> 
+
+                          
+                           </section><br>
+                           <md-divider></md-divider>
+<section layout="row" layout-sm="column" layout-align="left left" layout-wrap class="style6" >
+                        <md-button class="md-raised md-primary " ng-click="save()"><ng-md-icon icon="add" class="style4 " aria-label="title"></ng-md-icon>Nuevo</md-button> </left> </section>
+                           
+
+
+                        <!-- ffff -->
+                        
+               
+            </md-card>
+        </div>
+    </md-content>
+</div>
+<style>
+.este {
+    text-align: center;
+}
+.style2 {
+    margin-left: 20%1
+     background-color: blue;
+    
+}
+.style3 {
+    margin-left: 10%;
+     
+    
+}
+.style4 {
+    background-color: skyblue;
+
+}
+.style5 {
+    margin-left: 20%;
+}
+}
+.style6 {
+    margin-right: 50%;
+}
+}
+.style7 {
+    margin-left: 40%;
+}
+
+
+
+
+
+
+
+
+
+
+</style>

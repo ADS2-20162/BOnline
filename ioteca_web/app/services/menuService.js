@@ -1,4 +1,4 @@
-
+ 
 app
 //------------------------------
 // TODO: API menu
@@ -28,62 +28,46 @@ app
         //title: 'Sección ui',
         //type: 'heading',
         menu: [{
-            title: 'U.I.',
+            title: 'MANTENIMIENTO',
             type: 'toggle',
             state: 'ui',
             menu_items: [{
-                title: 'Test 1 uno más',
+                title: 'Trabajador',
                 state: 'ui.test1',
                 type: 'link'
             }, {
-                title: '2Test 2',
+                title: 'Medicinas',
                 state: 'ui.test2',
                 type: 'link'
-            }, {
-                title: 'Test 3',
-                state: 'ui.test3',
-                type: 'link'
-            }, {
-                title: 'Test 4',
-                state: 'ui.test4',
-                type: 'link'
-            }, {
-                title: 'Test 5',
-                state: 'ui.test5',
-                type: 'link'
-            }, {
-                title: 'Test Directivas',
-                state: 'ui.dir',
-                type: 'link'
-            }, ]
+            },  ]
         }]
     });
 
     sections.push({
 
         menu: [{
-            title: 'Auths System',
+            title: 'REPORTES',
             type: 'toggle',
             state: 'auths.system',
             menu_items: [{
-                title: 'xx',
-                state: 'auths.system.xx',
+                title: 'UPeU',
+                state: 'auths.system.upeu',
                 type: 'link'
             }, {
-                title: 'Grupos',
-                state: 'auths.system.ct',
+                title: 'CAT',
+                state: 'auths.system.cat',
                 type: 'link'
             }, {
-                title: 'Permission',
-                state: 'auths.system.permission',
+                title: 'Personal',
+                state: 'auths.system.personal',
                 type: 'link'
             }, {
-                title: 'Menu',
-                state: 'auths.system.menu',
+                title: 'Visita',
+                state: 'auths.system.visita',
                 type: 'link'
             }, {
-                title: 'Log',
-                state: 'auths.system.log',
+                title: 'Mision',
+                state: 'auths.system.mision',
                 type: 'link'
             }, ]
         }]
