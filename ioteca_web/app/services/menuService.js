@@ -30,7 +30,7 @@ app
             type: 'toggle',
             state: 'catalogo.catalogo',
             menu_items: [{
-                title: 'Categorías',
+                title: 'Pacientes',
                 state: 'catalogo.catalogo.categorias',
                 type: 'link'
             },  ]
