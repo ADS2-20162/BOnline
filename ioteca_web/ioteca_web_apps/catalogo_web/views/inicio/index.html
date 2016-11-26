@@ -1,99 +1,115 @@
+<md-content class="md-padding style1" layout-xs="column" layout="row">
+<div flex-xs flex-gt-xs="100" layout="column">
 <div ng-cloak>
     <md-content class="md-padding" layout-xs="column" layout="row">
         <div flex-xs flex-gt-xs="100" layout="column">
             <md-card ng-controllerx="DashboardSaveCtrl">
                 <md-card-header>
-                    <md-card-avatar>
-                        <img class="md-user-avatar style5" src="media/img/list/logo.png" />
-                    </md-card-avatar>
-                    <md-card-header-text>
+                    
+                    <md-card-header-text class="style6" >
                         <span class="md-headline este">BUSCAR PACIENTES</span>
+                        <md-card-avatar>
+                        <img class="md-user-avatar style6" src="media/img/list/Icons-Land-Medical-People-Doctor-Male.ico" />
+                    </md-card-avatar>
                        
                     </md-card-header-text>
 
                 </md-card-header> <br>
-                <md-divider></md-divider>
+
                 
-     <!-- esto son los buscadoress -->
+     
+                              <!-- linea 1-->
+
+
+                <md-card-actions layout="row" layout-align="start center " ><br>
+
+          
+                           
+<md-input-container class="md-block "flex-gt-sm>
+<TR>
+<TD>Facultad :</TD>
+<TD>
+<SELECT name="ocupación">
+<OPTION VALUE="UPeU">UPeU</OPTION>
+<OPTION VALUE="CAT">CAT</OPTION>
+<OPTION VALUE="Personal">Personal</OPTION>
+<OPTION VALUE="Visita">Visita</OPTION>
+<OPTION VALUE="Mision">Mision</OPTION>
+</SELECT>
+</TD>
+</TR>
+</md-input-container>
+
+
+
+                        <md-card-icon-actions>
+                                <md-input-container class="md-block md-search style7">
+                                    <input placeholder="Buscar por codigo" ng-model="codigo" ng-keyup="buscar(codigo)">
+                                </md-input-container>
+                        </md-card-icon-actions>
+
+
+                </md-card-actions>
+
+                
+                                         <!-- linea 2 -->
+
+
                 <md-card-actions layout="row" layout-align="start center" >
                             
                            
-                            <md-card-icon-actions>
-                                
-                               <!-- input desplegable --> 
-            
-                                
-                                 <md-input-container class="md-block md-search style3">
-                                    <input placeholder="Buscar " ng-model="query" ng-keyup="buscar()">
-                                </md-input-container>
-      
-
-
-                            </md-card-icon-actions>
-
-                            <md-card-icon-actions>
-                                
-                                <md-input-container class="md-block md-search">
-                                    <input placeholder="Buscar por codigo" ng-model="query" ng-keyup="buscar()">
-                                </md-input-container>
-                                 
-                               
-      
-
-
-                            </md-card-icon-actions>
-
-                        </md-card-actions>
-                
-       <!-- esto son los buscadoress -->     
-                         <md-card-actions layout="row" layout-align="start center" >
-                            
-                           
-                            <md-card-icon-actions>
-                                
+                        <md-card-icon-actions>
                                 <md-input-container class="md-block md-search style3">
-                                    <input placeholder="Buscar por DNI" ng-model="query" ng-keyup="buscar()">
+                                    <input placeholder="Buscar por DNI" ng-model="DNI" ng-keyup="buscar(DNI)">
                                 </md-input-container>
-                                 
-                                
-      
+                        </md-card-icon-actions>
 
 
-                            </md-card-icon-actions>
                             <md-card-icon-actions>
-                                
-                                <md-input-container class="md-block md-search">
-                                    <input placeholder="Buscar po apellidos" ng-model="query" ng-keyup="buscar()">
+                                <md-input-container class="md-block md-search style3">
+                                    <input placeholder="Buscar por Apellidos" ng-model="Apellidos" ng-keyup="buscar(Apellidos)">
                                 </md-input-container>
-                                
-                               
-      
-
-
                             </md-card-icon-actions>
 
                         </md-card-actions><br>
 
- <section layout="row" layout-sm="column" layout-align="center center" layout-wrap class="e">
-                        <md-button class="md-raised md-primary style1" ng-click="save()"><ng-md-icon icon="search" class="style4" aria-label="title"></ng-md-icon> Buscar</md-button> </left>
-                          <md-button class="md-raised md-primary  style2" ui-sref="catalogo.catalogo.inicioNew" ng-click="save()"> <ng-md-icon icon="add" class="style4"style4 aria-label="title"></ng-md-icon> Agregar Paciente</md-button>
+
+
+                                           <!-- botones-->
+
+
+
+
+ <md-divider></md-divider>
+                   <section layout="row" layout-sm="column" layout-align="center center" layout-wrap class="e">
+
+                    <md-card-icono>
+                        <img class="md-user-avatar style9" src="media/img/list/Search-Male-User-icon.png" />
+                    </md-card-icono> 
+
+                        <md-button class="md-raised md-primary style4" ui-sref="catalogo.catalogo.inicioBuscar" ng-click="save()"><ng-md-icon icon="search" class="style4" aria-label="title"></ng-md-icon> Buscar</md-button>
+                        
+                          <md-button class="md-raised md-primary  style5" ui-sref="catalogo.catalogo.inicioNew" ng-click="save()"> <ng-md-icon icon="add" class="style5" aria-label="title"></ng-md-icon> Agregar Paciente</md-button>
+                          <md-card-icono>
+                        <img class="md-user-avatar style8" src="media/img/list/lero.jpg" />
+                    </md-card-icono>
                            </section><br>
                          <table table-responsive>
                         <md-divider></md-divider>
                      
-                        <thead md-on-reorder="onReorder">
+                        <thead md-on-reorder="onReorder style10">
                             <tr>
                                 <th>#</th>
-                                 <th class="col-hidden" data-order="codigo">codigo</th>
-                                 <th class="col-hidden" data-order="nombre">nombre</th>
-                                 <th class="col-hidden" data-order="nombre">apellidos</th>
-                                 <th class="col-hidden" data-order="nombre">categoria</th>
-                                 <th class="col-hidden" data-order="nombre">Direcion</th>
-                                 <th class="col-hidden" data-order="nombre">telefono</th>
+                                 <th class="col-hidden style10" data-order="codigo">Codigo</th>
+                                 <th class="col-hidden style10" data-order="nombre">Nombre</th>
+                                 <th class="col-hidden style10" data-order="nombre">Apellidos</th>
+                                 <th class="col-hidden style10" data-order="nombre">Categoria</th>
+                                 <th class="col-hidden style10" data-order="nombre">Direcion</th>
+                                 <th class="col-hidden style10" data-order="nombre">Telefono</th>
 
 
                                 
-                                <th colspan="2" class="align-options">acciones</th>
+                                <th colspan="2" class="align-options style10">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -119,45 +135,70 @@
                     </table>
 
 
-                        <!-- ffff -->
-                        
-               
             </md-card>
         </div>
     </md-content>
 </div>
+    <md-card-content>
+</div>
+
+                                        <!-- ffff -->
+
 <style>
+
 .este {
     text-align: center;
 
 }
 .style1 {
     
-    margin-right: 30%;
+background:#81DAF5;
+right:0%;
 
-    
 }
 .style2 {
-    margin-right: 20%;
-     
+    margin-left: 0%;
+     background: #A9F5D0;
     
 }
 .style3 {
     margin-left: 20%;
-     
+     background: #E0E6F8;
     
 }
 
 .style4 {
-    background-color: skyblue;
+    left: 0%;
 }
 
 .style5 {
-    width:60px;
 
+  
+  left: 24%
+  
+}
 
+.style6 {
 
-
-
-
+    width:80px;
+  background-color:#81BEF7;
+  border: ridge;
+}
+.style7 {
+    width:200px;
+  background-color:#F6CEEC;
+  left: 15%
+  }
+  .style8 {
+   width:50px;
+  left: 15%;
+}
+  .style9 {
+   width:50px;
+  left: 80%
+}
+.style10 {
+   background: #E2A9F3;
+}
+}
 </style>

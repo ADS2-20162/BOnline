@@ -9,8 +9,11 @@ app
     $scope.lista = [];
     $scope.categoria = {};
 
+
+
     
     //$window.location = "#" + $location.path();
+
 
     $scope.list = function(params) {
         $scope.isLoading = true;
@@ -31,6 +34,7 @@ app
         params.query = $scope.query;
         $scope.list(params);
     };
+
     
 
     $scope.onReorder = function(order) { //TODO
@@ -50,4 +54,28 @@ app
         }
     };
 
-})
+});
+
+
+
+
+    
+ 
+var app = angular.module("InicioCtrl", []);
+app.controller("InicioCtrl", function($scope) {
+    $scope.records = [
+       {
+            "Name" : "Alfreds Futterkiste",
+            "Country" : "Germany"
+        },{
+            "Name" : "Berglunds snabbköp",
+            "Country" : "Sweden"
+        },{
+            "Name" : "Centro comercial Moctezuma",
+            "Country" : "Mexico"
+        },{
+            "Name" : "Ernst Handel",
+            "Country" : "Austria"
+        }
+    ] ;
+});

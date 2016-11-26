@@ -1,39 +1,198 @@
+<md-content class="md-padding style1" layout-xs="column" layout="row">
+<div flex-xs flex-gt-xs="100" layout="column">
 <div ng-cloak>
     <md-content class="md-padding" layout-xs="column" layout="row">
         <div flex-xs flex-gt-xs="100" layout="column">
-            <form name="dForm" role="form" ng-controller="CategoriaSaveCtrl">
-                <md-card>
-                    <md-card-header>
+            <md-card ng-controllerx="DashboardSaveCtrl">
+                <md-card-header>
+                    
+                    <md-card-header-text class="style6" >
+                        <span class="md-headline este">REGISTRO PACIENTES</span>
                         <md-card-avatar>
-                            <img class="md-user-avatar" src="media/img/list/60.jpeg" />
-                        </md-card-avatar>
-                        <md-card-header-text>
+                        <img class="md-user-avatar style6" src="media/img/list/logo.png" />
+                    </md-card-avatar>
+                       
+                    </md-card-header-text>
+
+                </md-card-header> <br>
+
+                <md-divider></md-divider>
+                
+     <!-- esto es el general -->
+                <md-card-actions layout="row" layout-align="start center" >
+                            
                            
-                            <span class="md-headline">AGREGAR PACIENTES</span>
-                            <span class="md-subhead">Trabajar con PACIENTES</span>
-                        </md-card-header-text>
-                    </md-card-header>
-                    <md-card-content>
-                        <div layout-gt-sm="row">
-                            <md-input-container class="md-block" flex-gt-sm>
-                                <label>Código</label>
-                                <input name="codigo" ng-model="categoria.codigo">
-                            </md-input-container>
-                            <md-input-container class="md-block" flex-gt-sm>
-                                <label>Nombre</label>
-                                <input name="nombre" ng-model="categoria.nombre" required>
-                                <div ng-messages="dForm.nombre.$error">
-                                    <div ng-message="required">This is required.</div>
+                            <md-card-icon-actions>
+                                 <md-input-container class="md-block md-search style3">
+                                   <input placeholder="Nro de Historia" ng-model="Historia" ng-keyup="buscar(historia)">
+                                </md-input-container>
+                            </md-card-icon-actions><br>
+
+
+                            <md-card-icon-actions>
+                                <md-input-container class="md-block md-search style3">
+                                    <input placeholder="Fecha" ng-model="Fecha" ng-keyup="buscar(Fecha)">
+                                </md-input-container>
+                            </md-card-icon-actions>
+
+
+                             <md-card-icon-actions>
+                                <md-input-container class="md-block md-search style3">
+                                    <input placeholder="Hora" ng-model="Hora" ng-keyup="buscar(Hora)">
+                                </md-input-container>
+                            </md-card-icon-actions>
+
+
+
+                        </md-card-actions>
+
+
+
+                <!-- este tambien general 2 -->
+           
+                         <md-card-actions layout="row" layout-align="start center" >
+                            
+                           
+                            <md-card-icon-actions>
+                                <md-input-container class="md-block md-search style3">
+                                    <input placeholder="Ap.Paterno" ng-model="Paterno" ng-keyup="buscar(Paterno)">
+                                </md-input-container>
+                            </md-card-icon-actions>
+
+
+                            <md-card-icon-actions>
+                                <md-input-container class="md-block md-search style3">
+                                    <input placeholder="Ap.Materno" ng-model="Materno" ng-keyup="buscar(Materno)">
+                                </md-input-container>
+                            </md-card-icon-actions>
+
+
+                             <md-card-icon-actions>
+                                <md-input-container class="md-block md-search style3">
+                                    <input placeholder="Nombre" ng-model="Nombre" ng-keyup="buscar(Nombre)">
+                                </md-input-container>
+                            </md-card-icon-actions>
+
+
+                        </md-card-actions><br> 
+
+
+                        <!--general3-->
+
+                        <md-card-actions layout="row" layout-align="start center" >
+
+
+                               <md-input-container class="md-block" flex-gt-sm>
+                                <label>Fecha Nacimiento.</label>
+                                <md-datepicker name="fecha_nac" ng-model="autor.fecha_nacT"></md-datepicker>
+                                <div ng-messages="dForm.fecha_nac.$error">
+                                    <div ng-message="valid">Not a valid date!.</div>
                                 </div>
                             </md-input-container>
-                        </div>
-                        <md-input-container class="md-block">
-                            <md-checkbox ng-model="categoria.estado" aria-label="Estado">
-                                Estado
-                            </md-checkbox>
-                        </md-input-container>
-                    </md-card-content>
-                    <md-divider></md-divider>
+
+
+
+<md-input-container class="md-block" flex-gt-sm>
+<TR>
+<TD>Est. Civil :</TD>
+<TD>
+<SELECT name="ocupación">
+<OPTION VALUE="profesor">Soltero(a)</OPTION>
+<OPTION VALUE="estudiante">Casado(a)</OPTION>
+<OPTION VALUE="ingeniero">Divorsiado(a)</OPTION>
+<OPTION VALUE="jubilado">Viudo(a)</OPTION>
+<OPTION VALUE="otro">Sin razon</OPTION>
+<OPTION VALUE="otro">Avestruz</OPTION>
+<OPTION VALUE="otro">Otro</OPTION>
+</SELECT>
+</TD>
+</TR>
+</md-input-container>
+
+
+
+<md-input-container class="md-block"  flex-gt-sm>
+<TR>
+<TD>Género :</TD>
+<TD>
+Hombre:<INPUT type=radio name="género" value="M">
+</TD>
+</TR>
+</md-input-container>
+
+
+<md-input-container class="md-block" flex-gt-sm>
+<TR>
+<TD>
+Mujer  : <INPUT type=radio name="género" value="F">
+</TD>
+</TR>
+</md-input-container>
+
+
+                         </md-card-actions><br>
+
+                               <!--general4-->  
+                     <md-card-actions layout="row" layout-align="start center " >
+
+
+                              <md-card-icon-actions>
+                                <md-input-container class="md-block md-search style4">
+                                    <input placeholder="Procedencia" ng-model="Procedencia" ng-keyup="buscar(Procedencia)">
+                                </md-input-container>
+                            </md-card-icon-actions>
+
+
+                              <md-card-icon-actions>
+                                <md-input-container class="md-block md-search style4">
+                                    <input placeholder="Telefono" ng-model="Telefono" ng-keyup="buscar(Telefono)">
+                                </md-input-container>
+                            </md-card-icon-actions>
+
+
+                            
+
+                             <md-card-icon-actions>
+                                <md-input-container class="md-block md-search style4">
+                                    <input placeholder="Celular" ng-model="Celular" ng-keyup="buscar(Celular)">
+                                </md-input-container>
+                            </md-card-icon-actions>
+
+
+                      </md-card-actions><br>
+
+                               <!--general5-->  
+                     <md-card-actions layout="row" layout-align="start center" >
+
+
+                             <md-card-icon-actions>
+                                <md-input-container class="md-block md-search style5">
+                                    <input placeholder="Grado de Instruccion" ng-model="Grado" ng-keyup="buscar(Grado)">
+                                </md-input-container>
+                            </md-card-icon-actions>
+
+
+                             <md-card-icon-actions>
+                                <md-input-container class="md-block md-search style5">
+                                    <input placeholder="Ocupacion" ng-model="Ocupacion" ng-keyup="buscar(Ocupacion)">
+                                </md-input-container>
+                            </md-card-icon-actions>
+
+                             <md-card-icon-actions>
+                                <md-input-container class="md-block md-search style5">
+                                    <input placeholder="E-mail" ng-model="mail" ng-keyup="buscar(mail)">
+                                </md-input-container>
+                            </md-card-icon-actions>
+
+
+
+
+                         </md-card-actions><br> 
+                            
+
+
+
+ <md-divider></md-divider>
                     <md-card-actions layout="row" layout-xs="column" layout-align="start center">
                         <md-card-icon-actions>
                             <md-button class="md-icon-button" aria-label="toggle">
@@ -42,13 +201,57 @@
                         </md-card-icon-actions>
                         <md-button type="reset" ng-click="cancel()" class="md-raised">Cancel</md-button>
                         <md-button type="submit" ng-click="save()" class="md-raised md-primary">
-                            <span ng-show="categoria.id == null">Create</span>
-                            <span ng-show="categoria.id">Update</span>
+                            <span ng-show="autor.id == null">Guardar</span>
+                            <span ng-show="autor.id">Update</span>
                         </md-button>
-                         <md-button class="md-raised md-primary style1" ui-sref="catalogo.catalogo.inicioBuscar" ng-click="save()"><ng-md-icon icon="search" class="style4"style4 aria-label="title"></ng-md-icon> Buscar</md-button>
                     </md-card-actions>
-                </md-card>
-            </form> 
+
+
+            </md-card>
         </div>
     </md-content>
 </div>
+    <md-card-content>
+</div>
+
+                                        <!-- ffff -->
+
+<style>
+
+.este {
+    text-align: center;
+
+}
+.style1 {
+    
+background: #BCA9F5;
+right:0%;
+
+}
+.style2 {
+    margin-right: 20%;
+     
+    
+}
+.style3 {
+    margin-left: 20%;
+     background: #E0E6F8;
+    
+}
+
+.style4 {
+    background-color:#CEF6EC;
+}
+
+.style5 {
+    width:60px;
+  background-color:#F6CEEC;
+}
+
+.style6 {
+
+    width:80px;
+  background-color:#58FAAC;
+  border: ridge;
+}
+</style>

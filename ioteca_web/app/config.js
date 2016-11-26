@@ -146,6 +146,14 @@ app.constant('ROUTERS', [{
         },
         "templateUrl": "ioteca_web_apps/catalogo_web/views/inicio/form.html"
     },
+    "catalogo.catalogo.inicioBuscar": {
+        "url": "/inicio/buscar",
+        "data": {
+            "section": "Catálogo",
+            "page": "Categorías"
+        },
+        "templateUrl": "ioteca_web_apps/catalogo_web/views/inicio/erica.html"
+    },
     "catalogo.catalogo.inicioEdit": {
         "url": "/inicio/:id/edit",
         "data": {

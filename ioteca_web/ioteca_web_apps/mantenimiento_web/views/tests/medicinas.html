@@ -1,104 +1,131 @@
+
+<md-content class="md-padding style1" layout-xs="column" layout="row">
+<div flex-xs flex-gt-xs="100" layout="column">
 <div ng-cloak>
     <md-content class="md-padding" layout-xs="column" layout="row">
         <div flex-xs flex-gt-xs="100" layout="column">
-            <md-card ng-controllerx="CategoriaCtrl">
+            <md-card ng-controllerx="DashboardSaveCtrl">
                 <md-card-header>
-                   
-                    <md-card-header-text>
-                        <span class="md-headline este">Medicamentos</span>
                     
+                    <md-card-header-text class="style2" >
+                        <span class="md-headline este">Medicamentos</span>
+                        <md-card-avatar>
+                        <img class="md-user-avatar style2" src="media/img/list/Logo-Salud2.jpg" />
+                    </md-card-avatar>
+                       
                     </md-card-header-text>
 
-                </md-card-header>
+                </md-card-header> <br>
+
                 <md-divider></md-divider>
                 
-     <!-- esto son los buscadoress -->
-                
-                            
+      <!-- esto son los buscadoress -->
+                <md-card-actions layout="row" layout-align="start center" >
+
+
+                             <!-- input desplegable --> 
+
                            
-                           
-
-                        
-
-                       
-
-       <!-- esto son los buscadoress -->     
-                         <md-card-actions layout="row" layout-align="start center" >
-                             <md-card-icon-actions>
-                                
-                                <md-input-container class="md-block md-search style5">
+                            <md-card-icon-actions>
+                                 <md-input-container class="md-block md-search style3">
                                     <input placeholder="Nombre" ng-model="query" ng-keyup="buscar()">
                                 </md-input-container>
-
-                                 <md-input-container class="md-block md-search style5">
-                                    <input placeholder="Categoria" ng-model="query" ng-keyup="buscar()">
-                                </md-input-container>
-                                
                             </md-card-icon-actions>
 
-                        </md-card-actions><br> 
-                                 
-
-                                 
-<!-- A QUIE ESTAN  LOS botones-->
-                        
- <section layout="row" layout-sm="column" layout-align="center center" layout-wrap >
-                        <md-button class="md-raised md-primary  style2 " ng-click="save()"> <ng-md-icon icon="apple" class="style4" aria-label="title"></ng-md-icon>Pastilla</md-button>
-
-                        <md-button class="md-raised md-primary style2 " ng-click="save()"><ng-md-icon icon="search" class="style4 " aria-label="title"></ng-md-icon> Buscar</md-button> </left> 
-
-                          
-                           </section><br>
-                           <md-divider></md-divider>
-<section layout="row" layout-sm="column" layout-align="left left" layout-wrap class="style6" >
-                        <md-button class="md-raised md-primary " ng-click="save()"><ng-md-icon icon="add" class="style4 " aria-label="title"></ng-md-icon>Nuevo</md-button> </left> </section>
-                           
 
 
-                        <!-- ffff -->
-                        
-               
+                        </md-card-actions>
+
+
+<md-card-actions layout="row" layout-align="start center" >
+                   <md-card-avatar>
+                        <img class="md-user-avatar style4" src="media/img/list/logo (1).png" />
+                    </md-card-avatar><br>
+
+<md-input-container class="md-block" flex-gt-sm>
+<TR>
+<TD>Categoria :</TD>
+<TD>
+<SELECT name="ocupación">
+<OPTION VALUE="profesor">Pastilla</OPTION>
+<OPTION VALUE="estudiante">Jarabe</OPTION>
+<OPTION VALUE="ingeniero">Inyeccion</OPTION>
+
+</SELECT>
+</TD>
+</TR>
+
+ <md-button class="md-raised md-primary style5" ui-sref="catalogo.catalogo.inicioBuscar" ng-click="save()"><ng-md-icon icon="search" class="style5" aria-label="title"></ng-md-icon> Buscar</md-button>
+ 
+
+
+</md-input-container>
+                  </md-card-actions>
+
+
+
+                         <!-- esto son los buscadoress -->       
+
+
+
+
+                             <md-divider></md-divider>
+
+
+
+                    <md-card-actions layout="row" layout-xs="column" layout-align="start center">
+                        <md-card-icon-actions>
+                            <md-button class="md-icon-button" aria-label="toggle">
+                                <md-icon md-svg-icon="md-toggle-arrow"></md-icon>
+                            </md-button>
+                        </md-card-icon-actions>
+    
+                        <md-button type="submit" ng-click="save()" class="md-raised md-primary">
+                            <span ng-show="autor.id == null">NUEVO</span>
+                            <span ng-show="autor.id">Update</span>
+                        </md-button>
+                    </md-card-actions>
+
+
             </md-card>
         </div>
     </md-content>
 </div>
+    <md-card-content>
+</div>
+
+                                        <!-- ffff -->
+
 <style>
+
 .este {
     text-align: center;
+
+}
+.style1 {
+    
+background: #819FF7;
+right:0%;
+
 }
 .style2 {
-    margin-left: 20%1
-     background-color: blue;
+   
+      width:80px;
+  background-color:#8258FA;
+  border: ridge;
     
 }
 .style3 {
-    margin-left: 10%;
-     
+    margin-left: 20%;
+     background: #E0E6F8;
     
 }
-.style4 {
-    background-color: skyblue;
-
+ .style4 {
+    width:60px;
 }
 .style5 {
-    margin-left: 20%;
+   
+  background:#D8F781;
+    
 }
-}
-.style6 {
-    margin-right: 50%;
-}
-}
-.style7 {
-    margin-left: 40%;
-}
-
-
-
-
-
-
-
-
-
-
 </style>
